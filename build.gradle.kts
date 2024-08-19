@@ -24,6 +24,18 @@ java {
     withJavadocJar()
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "org.blagochinnoved"
+            artifactId = "codegen"
+            version = "1.0-snapshot"
+
+            from(components["java"])
+        }
+    }
+}
+
 sourceSets.main {
     kotlin.srcDir("build/generated/ksp/main/kotlin")
 }
@@ -34,3 +46,4 @@ dependencies {
     implementation("com.squareup:kotlinpoet:1.13.0")
     implementation("com.squareup:kotlinpoet-ksp:1.13.0")
 }
+
