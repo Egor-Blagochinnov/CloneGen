@@ -1,5 +1,7 @@
 plugins {
     kotlin("jvm") version "2.0.0"
+    id("java")
+    id("maven-publish")
 }
 
 group = "org.blagochinnoved"
@@ -15,6 +17,11 @@ tasks.test {
 
 kotlin {
     jvmToolchain(18)
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
 }
 
 sourceSets.main {
