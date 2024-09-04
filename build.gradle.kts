@@ -15,8 +15,13 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.withType<JavaCompile> {
+    sourceCompatibility = JavaVersion.VERSION_1_8.majorVersion
+    targetCompatibility = JavaVersion.VERSION_1_8.majorVersion
+}
+
 kotlin {
-    jvmToolchain(18)
+    jvmToolchain(8)
 }
 
 java {
